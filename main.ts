@@ -19,8 +19,8 @@ function copyFolder(name: string): void {
 }
 
 mkdirSync(outputDir, { recursive: true });
-copyFolder('game');
-copyFolder('screenshots');
+// game/ is the playable game; screenshots/ holds its 3 or 4 renders, the first the cover.
+for (const folder of ['game', 'screenshots']) copyFolder(folder);
 
 // The scorer's caps: the dossier text is capped at 160 KiB; at most 4 screenshots of
 // 256 KiB each; game/ holds at most 993 entries, 48 MiB, paths of at most 1000 bytes.
